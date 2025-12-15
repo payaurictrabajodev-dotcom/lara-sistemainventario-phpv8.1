@@ -22,4 +22,13 @@ class Rol extends Model
     {
         return $this->hasMany(User::class, 'role_id');
     }
+
+    /**
+     * Relación: Un rol puede tener muchas vistas/permisos
+     */
+    public function vistas()
+    {
+        return $this->belongsToMany(VistaSistema::class, 'rol_vista', 'rol_id', 'vista_id')
+            ->withTimestamps();
+    }
 }

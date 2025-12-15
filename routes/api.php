@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\RolController;
+use App\Http\Controllers\Api\RolVistaController;
 use App\Http\Controllers\Api\EquipoController;
 use App\Http\Controllers\Api\UnidadOrganizacionalController;
 
@@ -65,6 +66,12 @@ Route::middleware('auth:sanctum')->group(function () {
 
     // Roles
     Route::apiResource('roles', RolController::class);
+
+    // Gestión de Permisos/Vistas de Roles
+    Route::get('/vistas-sistema', [RolVistaController::class, 'todasLasVistas']);
+    Route::get('/roles/{id}/vistas', [RolVistaController::class, 'vistasDelRol']);
+    Route::post('/roles/{id}/vistas', [RolVistaController::class, 'asignarVistas']);
+    Route::get('/mis-vistas', [RolVistaController::class, 'vistasPermitidas']);
 
     // Hardware
     Route::apiResource('hardware', HardwareController::class);

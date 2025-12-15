@@ -33,6 +33,7 @@ class DatabaseSeeder extends Seeder
             // Usuarios y roles
             RolesSeeder::class,
             UsuariosSeeder::class,
+            VistasSistemaSeeder::class,
 
             // Responsables
             ResponsablesSeeder::class,
