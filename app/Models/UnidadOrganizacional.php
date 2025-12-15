@@ -85,11 +85,5 @@ class UnidadOrganizacional extends Model
         return $this->hasMany(Impresora::class, 'unidad_organizacional_id');
     }
 
-    /**
-     * Relación: Una unidad puede tener muchos registros de equipos
-     */
-    public function registrosEquipos()
-    {
-        return $this->hasMany(RegistroEquipo::class, 'unidad_organizacional_id');
-    }
+
 }
