@@ -23,6 +23,7 @@ class Equipo extends Model
         'marca',
         'modelo',
         'direccion_ip',
+        'mac',
         'fecha_compra',
         'fecha_fabricacion',
         'fecha_asignacion',

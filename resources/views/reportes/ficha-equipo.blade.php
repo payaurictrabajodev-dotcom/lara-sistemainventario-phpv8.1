@@ -149,7 +149,7 @@
       
         <!-- Fila 5: Encabezado de Tabla de Periféricos -->
         <tr>
-            <th class="table-header" style="width: 25%;">PERIFÉRICO</th>
+            <th class="table-header" style="width: 25%;">ITEM</th>
             <th class="table-header" style="width: 30%;">MODELO</th>
             <th class="table-header" style="width: 20%;">MARCA</th>
             <th class="table-header" style="width: 25%;">CÓD. INVENTARIO</th>

@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\Api\TipoComponenteController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\UserController;
@@ -20,7 +19,6 @@ use App\Http\Controllers\Api\TipoImpresoraController;
 use App\Http\Controllers\Api\TipoInsumoController;
 use App\Http\Controllers\Api\EquipoRelacionController;
 use App\Http\Controllers\Api\ComponenteController;
-use App\Http\Controllers\Api\GestionEquiposController;
 use App\Http\Controllers\Api\ReporteController;
 use App\Http\Controllers\Api\DashboardController;
 use App\Http\Controllers\Api\TipoHardwareController;

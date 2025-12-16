@@ -76,6 +76,7 @@ return new class extends Migration
             $table->string('marca')->nullable();
             $table->string('modelo')->nullable();
             $table->string('direccion_ip')->nullable();
+            $table->string('mac')->nullable(); // Dirección MAC del equipo
             $table->date('fecha_compra')->nullable();
             $table->date('fecha_fabricacion')->nullable();
             $table->date('fecha_asignacion')->nullable();
