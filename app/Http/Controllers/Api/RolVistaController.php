@@ -73,12 +73,32 @@ class RolVistaController extends Controller
     {
         $user = auth()->user();
 
-        if (!$user || !$user->role_id) {
+        if (!$user) {
             return response()->json([
                 'vistas' => []
             ]);
         }
 
+        // Si es administrador, retornar todas las vistas
+        if ($user->es_administrador == 1) {
+            $vistas = VistaSistema::with('children')
+                ->whereNull('parent_id')
+                ->orderBy('orden')
+                ->get();
+
+            return response()->json([
+                'vistas' => $vistas
+            ]);
+        }
+
+        // Si no tiene rol asignado, retornar vacío
+        if (!$user->role_id) {
+            return response()->json([
+                'vistas' => []
+            ]);
+        }
+
+        // Usuario normal: retornar vistas según su rol
         $rol = Rol::with(['vistas' => function($query) {
             $query->with('children')->whereNull('parent_id')->orderBy('orden');
         }])->find($user->role_id);

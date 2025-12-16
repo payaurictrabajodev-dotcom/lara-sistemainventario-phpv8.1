@@ -102,7 +102,7 @@ class UnidadOrganizacionalController extends Controller
                     'error' => 'Una unidad no puede ser su propio padre'
                 ], 422);
             }
-            
+
             $descendants = $this->getAllDescendants($id);
             if (in_array($request->parent_id, $descendants)) {
                 return response()->json([
@@ -126,12 +126,12 @@ class UnidadOrganizacionalController extends Controller
     {
         $descendants = [];
         $children = UnidadOrganizacional::where('parent_id', $id)->pluck('id');
-        
+
         foreach ($children as $childId) {
             $descendants[] = $childId;
             $descendants = array_merge($descendants, $this->getAllDescendants($childId));
         }
-        
+
         return $descendants;
     }
 

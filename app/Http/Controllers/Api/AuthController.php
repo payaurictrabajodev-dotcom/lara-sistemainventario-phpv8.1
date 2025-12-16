@@ -97,7 +97,7 @@ class AuthController extends Controller
     public function usuarioActual(Request $request)
     {
         return response()->json([
-            'usuario' => $request->user(),
+            'usuario' => $request->user()->load('role'),
         ]);
     }
 }

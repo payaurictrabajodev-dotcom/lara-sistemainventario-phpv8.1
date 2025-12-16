@@ -13,24 +13,13 @@ class VistasSistemaSeeder extends Seeder
     public function run(): void
     {
         $vistas = [
-            // Dashboard
-            [
-                'nombre' => 'Dashboard',
-                'ruta' => '/admin/dashboard',
-                'icono' => 'pi pi-home',
-                'modulo' => 'Dashboard',
-                'orden' => 1,
-                'es_menu' => true,
-                'parent_id' => null
-            ],
-
             // Usuarios (Padre)
             [
                 'nombre' => 'Usuarios',
                 'ruta' => '#',
                 'icono' => 'pi pi-users',
                 'modulo' => 'Usuarios',
-                'orden' => 2,
+                'orden' => 1,
                 'es_menu' => true,
                 'parent_id' => null
             ],
@@ -52,7 +41,7 @@ class VistasSistemaSeeder extends Seeder
                 'ruta' => '#',
                 'icono' => 'pi pi-desktop',
                 'modulo' => 'Equipos',
-                'orden' => 4,
+                'orden' => 2,
                 'es_menu' => true,
                 'parent_id' => null
             ],
@@ -63,7 +52,7 @@ class VistasSistemaSeeder extends Seeder
                 'ruta' => '#',
                 'icono' => 'pi pi-box',
                 'modulo' => 'Inventario',
-                'orden' => 5,
+                'orden' => 3,
                 'es_menu' => true,
                 'parent_id' => null
             ],
@@ -74,7 +63,7 @@ class VistasSistemaSeeder extends Seeder
                 'ruta' => '#',
                 'icono' => 'pi pi-print',
                 'modulo' => 'Impresoras',
-                'orden' => 6,
+                'orden' => 4,
                 'es_menu' => true,
                 'parent_id' => null
             ],
@@ -85,7 +74,7 @@ class VistasSistemaSeeder extends Seeder
                 'ruta' => '#',
                 'icono' => 'pi pi-building',
                 'modulo' => 'Unidades',
-                'orden' => 7,
+                'orden' => 5,
                 'es_menu' => true,
                 'parent_id' => null
             ],
@@ -96,7 +85,7 @@ class VistasSistemaSeeder extends Seeder
                 'ruta' => '#',
                 'icono' => 'pi pi-search',
                 'modulo' => 'Consultas',
-                'orden' => 8,
+                'orden' => 6,
                 'es_menu' => true,
                 'parent_id' => null
             ],
@@ -107,7 +96,7 @@ class VistasSistemaSeeder extends Seeder
                 'ruta' => '#',
                 'icono' => 'pi pi-chart-bar',
                 'modulo' => 'Reportes',
-                'orden' => 9,
+                'orden' => 7,
                 'es_menu' => true,
                 'parent_id' => null
             ],

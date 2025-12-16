@@ -22,7 +22,7 @@ return new class extends Migration
         Schema::create('unidades_organizacionales', function (Blueprint $table) {
             $table->id();
             $table->foreignId('tipo_unidad_id')->nullable()->constrained('tipos_unidad_organizacional')->nullOnDelete();
-            $table->foreignId('parent_id')->nullable()->constrained('unidades_organizacionales')->nullOnDelete();
+            $table->foreignId('parent_id')->nullable()->constrained('unidades_organizacionales')->onDelete('cascade');
             $table->string('nombre');
             $table->string('codigo')->nullable();
             $table->text('descripcion')->nullable();
