@@ -18,6 +18,10 @@ class TipoHardware extends Model
         'orden',
     ];
 
+    protected $casts = [
+        'orden' => 'integer',
+    ];
+
     /**
      * Relación con Hardware
      */

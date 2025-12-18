@@ -44,8 +44,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
+        'role_id' => 'integer',
+        'es_administrador' => 'boolean',
     ];
-    
+
     /**
      * Relación: El usuario pertenece a un rol
      */

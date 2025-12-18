@@ -21,6 +21,11 @@ class UnidadOrganizacional extends Model
 
     protected $with = ['tipoUnidad'];
 
+    protected $casts = [
+        'tipo_unidad_id' => 'integer',
+        'parent_id' => 'integer',
+    ];
+
     /**
      * Relación: Una unidad pertenece a un tipo
      */

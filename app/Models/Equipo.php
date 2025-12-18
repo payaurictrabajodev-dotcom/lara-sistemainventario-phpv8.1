@@ -37,6 +37,11 @@ class Equipo extends Model
         'fecha_fabricacion' => 'date',
         'fecha_asignacion' => 'date',
         'fecha_registro' => 'date',
+        'numero_secuencia' => 'integer',
+        'unidad_organizacional_id' => 'integer',
+        'tipo_equipo_id' => 'integer',
+        'usuario_id' => 'integer',
+        'responsable_id' => 'integer',
     ];
 
     /**

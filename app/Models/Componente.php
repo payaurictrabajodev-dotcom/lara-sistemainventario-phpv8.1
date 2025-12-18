@@ -26,6 +26,13 @@ class Componente extends Model
         'observaciones',
     ];
 
+    protected $casts = [
+        'tipo_componente_id' => 'integer',
+        'unidad_organizacional_id' => 'integer',
+        'responsable_id' => 'integer',
+        'usuario_id' => 'integer',
+    ];
+
     /**
      * Relación: Un componente pertenece a un tipo de componente
      */

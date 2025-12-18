@@ -18,6 +18,10 @@ class Software extends Model
         'licencia',
     ];
 
+    protected $casts = [
+        'categoria_software_id' => 'integer',
+    ];
+
     /**
      * Relación con CategoriaSoftware
      */

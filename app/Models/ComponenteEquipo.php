@@ -17,6 +17,10 @@ class ComponenteEquipo extends Model
         'observaciones',
     ];
 
+    protected $casts = [
+        'equipo_id' => 'integer',
+    ];
+
     public function equipo()
     {
         return $this->belongsTo(Equipo::class, 'equipo_id');

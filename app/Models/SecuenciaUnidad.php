@@ -17,6 +17,11 @@ class SecuenciaUnidad extends Model
         'ultimo_numero'
     ];
 
+    protected $casts = [
+        'unidad_organizacional_id' => 'integer',
+        'ultimo_numero' => 'integer',
+    ];
+
     /**
      * Relación con UnidadOrganizacional
      */
@@ -27,7 +32,7 @@ class SecuenciaUnidad extends Model
 
     /**
      * Obtiene el siguiente número de secuencia para una unidad organizacional
-     * 
+     *
      * @param int $unidadOrganizacionalId
      * @return int
      */
@@ -50,7 +55,7 @@ class SecuenciaUnidad extends Model
 
     /**
      * Resetea la secuencia de una unidad organizacional
-     * 
+     *
      * @param int $unidadOrganizacionalId
      * @return void
      */
@@ -64,7 +69,7 @@ class SecuenciaUnidad extends Model
 
     /**
      * Obtiene el número actual sin incrementar
-     * 
+     *
      * @param int $unidadOrganizacionalId
      * @return int
      */

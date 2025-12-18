@@ -26,6 +26,14 @@ class Impresora extends Model
         'observaciones',
     ];
 
+    protected $casts = [
+        'unidad_organizacional_id' => 'integer',
+        'tipo_impresora_id' => 'integer',
+        'tipo_insumo_id' => 'integer',
+        'usuario_id' => 'integer',
+        'responsable_id' => 'integer',
+    ];
+
     /**
      * Relación: Una impresora pertenece a una unidad organizacional
      */

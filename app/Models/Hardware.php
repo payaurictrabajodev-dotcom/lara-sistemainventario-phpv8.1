@@ -21,6 +21,10 @@ class Hardware extends Model
         'especificaciones',
     ];
 
+    protected $casts = [
+        'tipo_hardware_id' => 'integer',
+    ];
+
     /**
      * Relación con TipoHardware
      */
