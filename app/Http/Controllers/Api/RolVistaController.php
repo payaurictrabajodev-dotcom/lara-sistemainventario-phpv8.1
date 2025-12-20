@@ -100,7 +100,7 @@ class RolVistaController extends Controller
 
         // Usuario normal: retornar vistas según su rol
         $rol = Rol::with(['vistas' => function($query) {
-            $query->with('children')->whereNull('parent_id')->orderBy('orden');
+            $query->orderBy('orden');
         }])->find($user->role_id);
 
         if (!$rol) {
@@ -109,8 +109,21 @@ class RolVistaController extends Controller
             ]);
         }
 
+        // Estructurar vistas jerárquicamente solo con las permitidas
+        $vistasPermitidas = $rol->vistas;
+        $vistasPadres = $vistasPermitidas->whereNull('parent_id')->values();
+        
+        // Agregar solo los hijos que están en las vistas permitidas
+        $vistasPadres = $vistasPadres->map(function($padre) use ($vistasPermitidas) {
+            $padre->children = $vistasPermitidas
+                ->where('parent_id', $padre->id)
+                ->sortBy('orden')
+                ->values();
+            return $padre;
+        });
+
         return response()->json([
-            'vistas' => $rol->vistas
+            'vistas' => $vistasPadres
         ]);
     }
 }
